@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Globalization;
 
 namespace Transferencia_Bancaria
 {
@@ -28,8 +29,9 @@ namespace Transferencia_Bancaria
                 return false;
             }
             this.Saldo -= valorSaque;
+            
 
-            Console.WriteLine($"Saldo atual da conta {this.Nome} é {this.Saldo}");
+            Console.WriteLine($"Saque realizado no valor de {valorSaque.ToString("C", CultureInfo.CurrentCulture)}. Saldo atual da conta {this.Nome} é {this.Saldo.ToString("C", CultureInfo.CurrentCulture)}.");
 
             return true;
         }
@@ -38,7 +40,7 @@ namespace Transferencia_Bancaria
         {
             this.Saldo += valorDeposito;
 
-            Console.WriteLine($"Saldo atual da conta de {this.Nome} é {this.Saldo}");
+            Console.WriteLine($"Deposito realizado no valor de {valorDeposito}. Saldo atual da conta de {this.Nome} é {this.Saldo}.");
         }
 
         public void Transferir(double valorTransferencia, Conta contaDestino)
@@ -54,9 +56,14 @@ namespace Transferencia_Bancaria
             string retorno = " ";
             retorno += "Tipo Conta: " + this.TipoConta + " | ";
             retorno += "Nome: " + this.Nome + " | ";
-            retorno += "Saldo: " + this.Saldo + " | ";
-            retorno += "Crédito: " + this.Credito;
+            retorno += "Saldo: " + this.Saldo.ToString("C", CultureInfo.CurrentCulture) + " | ";
+            retorno += "Crédito: " + this.Credito.ToString("C", CultureInfo.CurrentCulture);
             return retorno;
+        }
+
+        public void Converter(double valor)
+        {
+            var moeda = valor.ToString("C", CultureInfo.CurrentCulture);
         }
     }
 }
