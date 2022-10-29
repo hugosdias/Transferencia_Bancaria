@@ -84,7 +84,7 @@ namespace Transferencia_Bancaria
         {
             Console.Write("Ditite o numero da Conta: ");
             int indiceConta = int.Parse(Console.ReadLine());
-
+            
             Console.Write("Digite o valor a ser sacado: ");
             double valorSaque = double.Parse(Console.ReadLine());
 
@@ -105,7 +105,8 @@ namespace Transferencia_Bancaria
             }
             catch
             {
-                Console.WriteLine("Conta não localizada.");
+                Console.WriteLine("Conta não localizada. Veja as contas abaixo:");
+                Console.WriteLine();
                 ListarContas();
             }
 
