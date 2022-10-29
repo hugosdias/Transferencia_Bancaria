@@ -1,25 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Desenvolvimento\\Projetos\\Transferencia_Bancaria\\Transferencia_Bancaria.csproj": {}
+    "C:\\Projetos\\ContaBanco\\Transferencia_Bancaria\\Transferencia_Bancaria.csproj": {}
   },
   "projects": {
-    "D:\\Desenvolvimento\\Projetos\\Transferencia_Bancaria\\Transferencia_Bancaria.csproj": {
+    "C:\\Projetos\\ContaBanco\\Transferencia_Bancaria\\Transferencia_Bancaria.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Desenvolvimento\\Projetos\\Transferencia_Bancaria\\Transferencia_Bancaria.csproj",
+        "projectUniqueName": "C:\\Projetos\\ContaBanco\\Transferencia_Bancaria\\Transferencia_Bancaria.csproj",
         "projectName": "Transferencia_Bancaria",
-        "projectPath": "D:\\Desenvolvimento\\Projetos\\Transferencia_Bancaria\\Transferencia_Bancaria.csproj",
+        "projectPath": "C:\\Projetos\\ContaBanco\\Transferencia_Bancaria\\Transferencia_Bancaria.csproj",
         "packagesPath": "C:\\Users\\hugo_\\.nuget\\packages\\",
-        "outputPath": "D:\\Desenvolvimento\\Projetos\\Transferencia_Bancaria\\obj\\",
+        "outputPath": "C:\\Projetos\\ContaBanco\\Transferencia_Bancaria\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\hugo_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\hugo_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +55,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

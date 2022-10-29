@@ -84,11 +84,22 @@ namespace Transferencia_Bancaria
         {
             Console.Write("Ditite o numero da Conta: ");
             int indiceConta = int.Parse(Console.ReadLine());
-            
-            Console.Write("Digite o valor a ser sacado: ");
-            double valorSaque = double.Parse(Console.ReadLine());
+            try
+            {
+                if(listContas.Contains(listContas[indiceConta]))
+                {
+                    Console.Write("Digite o valor a ser sacado: ");
+                    double valorSaque = double.Parse(Console.ReadLine());
 
-            listContas[indiceConta].Sacar(valorSaque);
+                    listContas[indiceConta].Sacar(valorSaque);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Conta não localizada.");
+            }
+            
+            
         }
         private static void Depositar()
         {
