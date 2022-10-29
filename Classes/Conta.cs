@@ -40,7 +40,7 @@ namespace Transferencia_Bancaria
         {
             this.Saldo += valorDeposito;
 
-            Console.WriteLine($"Deposito realizado no valor de {valorDeposito}. Saldo atual da conta de {this.Nome} é {this.Saldo}.");
+            Console.WriteLine($"Deposito realizado no valor de {valorDeposito.ToString("C", CultureInfo.CurrentCulture)}. Saldo atual da conta de {this.Nome} é {this.Saldo.ToString("C", CultureInfo.CurrentCulture)}.");
         }
 
         public void Transferir(double valorTransferencia, Conta contaDestino)
@@ -48,6 +48,7 @@ namespace Transferencia_Bancaria
             if(this.Sacar(valorTransferencia))
             {
                 contaDestino.Depositar(valorTransferencia); 
+                
             }
         }
 
@@ -61,9 +62,5 @@ namespace Transferencia_Bancaria
             return retorno;
         }
 
-        public void Converter(double valor)
-        {
-            var moeda = valor.ToString("C", CultureInfo.CurrentCulture);
-        }
     }
 }

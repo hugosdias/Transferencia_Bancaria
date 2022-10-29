@@ -4,7 +4,6 @@ namespace Transferencia_Bancaria
 {
     class Program
     {
-        private const string V = "5";
         static List<Conta> listContas = new List<Conta>();
         static void Main(string[] args)
         {
@@ -95,11 +94,22 @@ namespace Transferencia_Bancaria
         {
             Console.Write("Digite o número da conta: ");
             int indiceConta = int.Parse(Console.ReadLine());
+            try
+            {
+                if (listContas.Contains(listContas[indiceConta]))
+                {
+                    Console.Write("Digite o valor a ser depositado: ");
+                    int valorDeposito = int.Parse(Console.ReadLine());
+                    listContas[indiceConta].Depositar(valorDeposito);
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Conta não localizada.");
+                ListarContas();
+            }
 
-            Console.Write("Digite o valor a ser depositado");
-            int valorDeposito = int.Parse(Console.ReadLine());
 
-            listContas[indiceConta].Depositar(valorDeposito);
         }
         private static void Transferir()
         {
