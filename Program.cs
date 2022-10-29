@@ -53,8 +53,36 @@ namespace Transferencia_Bancaria
             Console.Write("Digite o saldo inicial: ");
             double entradaSaldo = double.Parse(Console.ReadLine());
 
+            if(entradaSaldo < 0)
+            {
+                do
+                {
+                    Console.WriteLine("Digite um valor válido.");
+                    Console.Write("Digite o saldo inicial: ");
+                    entradaSaldo = double.Parse(Console.ReadLine());
+                }
+                while (entradaSaldo < 0);
+                {
+                    
+                }
+            }
+            
             Console.Write("Digite o crédito: ");
             double entradaCredito = double.Parse(Console.ReadLine());
+
+            if(entradaCredito < 0)
+            {
+                do
+                {
+                    Console.WriteLine("Digite um valor válido.");
+                    Console.Write("Digite o crédito inicial: ");
+                    entradaCredito = double.Parse(Console.ReadLine());
+                }
+                while (entradaCredito < 0);
+                {
+                    
+                }
+            }
 
             Conta novaConta = new Conta(tipoConta: (TipoConta)entradaTipoConta,
                                         saldo: entradaSaldo,
@@ -116,7 +144,7 @@ namespace Transferencia_Bancaria
             }
             catch
             {
-                Console.WriteLine("Conta não localizada. Veja as contas abaixo:");
+                Console.WriteLine("Conta não localizada. Contas cadastradas:");
                 Console.WriteLine();
                 ListarContas();
             }
