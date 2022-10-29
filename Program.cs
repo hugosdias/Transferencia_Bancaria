@@ -127,14 +127,33 @@ namespace Transferencia_Bancaria
         {
             Console.Write("Digite o numero da conta de ORIGEM: ");
             int indiceContaOrigem = int.Parse(Console.ReadLine());
+            try
+            {
+                if(listContas.Contains(listContas[indiceContaOrigem]))
+                {
+                    Console.Write("Digite o numero da conta de DESTINO: ");
+                    int indiceContaDestino = int.Parse(Console.ReadLine());
+                    try
+                    {
+                        if(listContas.Contains(listContas[indiceContaDestino]))
+                        {
+                            Console.Write("Digite o valor a ser TRANSFERIDO: ");
+                            double valorTransferencia = double.Parse(Console.ReadLine());
 
-            Console.Write("Digite o numero da conta de DESTINO: ");
-            int indiceContaDestino = int.Parse(Console.ReadLine());
-
-            Console.Write("Digite o valor a ser TRANSFERIDO: ");
-            double valorTransferencia = double.Parse(Console.ReadLine());
-
-            listContas[indiceContaOrigem].Transferir(valorTransferencia, listContas[indiceContaDestino]);
+                            listContas[indiceContaOrigem].Transferir(valorTransferencia, listContas[indiceContaDestino]);
+                        }
+                    }
+                    catch
+                    {
+                        Console.WriteLine("Conta DESTINO inválida");
+                    }
+                }
+            }
+            catch
+            {
+                Console.WriteLine("Conta ORIGEM inválida.");
+            }
+            
 
         }
         private static string ObterOpcaoUsuario()
